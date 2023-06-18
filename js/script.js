@@ -8,10 +8,11 @@ const resetBtn = document.querySelector(".resetBtn");
 const pomoCountsDisplay = document.querySelector(".pomoCountsDisplay");
 
 // Making Variables
-const WORK_TIME = 0.2 * 60;
-const BREAK_TIME = 0.1 * 60;
+const WORK_TIME = 25 * 60;
+const BREAK_TIME = 5 * 60;
 let timerID = null;
 let oneRoundCompleted = false;
+let roundCount = 0;
 let totalCount = 0;
 let paused = false;
 
@@ -32,7 +33,6 @@ const countDown = (time) => {
     return () => {
         const mins = Math.floor(time / 60).toString().padStart(2, '0');
         const secs = Math.floor(time % 60).toString().padStart(2, "0");
-        // timer.textContent = time;
         timer.textContent = `${mins}:${secs}`;
         time--;
         if(time < 0) {
@@ -40,14 +40,19 @@ const countDown = (time) => {
             if(!oneRoundCompleted) {
                 timerID = startTimer(BREAK_TIME);
                 oneRoundCompleted = true;
-                updateTitle("It's Break Time!");
-            }
-            else{
-                updateTitle("Completed 1 Round of Pomodoro Technique!");
-                setTimeout(() => updateTitle("Start Timer Again!"), 2000);
+                updateTitle("It's Break Time");
+            }else{
+                roundCount++;
+                if(roundCount === 1) {
+                    updateTitle("Completed First Round of Pomodoro Technique");
+                }else{
+                    updateTitle("Completed One More Round of Pomodoro Technique");
+                }
+                setTimeout(() => updateTitle("Start Timer Again"), 10000);
                 totalCount++;
                 saveLocalCounts();
                 showPomoCounts();
+                oneRoundCompleted = false; 
             }
         }
     }
@@ -76,14 +81,16 @@ const getTimeInSeconds = (timeString) => {
 // Adding Event Listener to start button
 startBtn.addEventListener('click', () => {
     timerID = startTimer(WORK_TIME);
-    updateTitle("It's Work Time!");
+    updateTitle("It's Work Time");
 });
 
 // Adding Event Listener to reset button
 resetBtn.addEventListener('click', () => {
+    localStorage.clear();
     stopTimer();
     timer.textContent = "25:00";
-    updateTitle("Click start to start timer");
+    updateTitle("Click Start Timer");
+    pomoCountsDisplay.style.display = "none";
 });
 
 // Adding Event Listener to pause button
