@@ -1,5 +1,4 @@
 Pomodoro Timer in desktop and mobile versions. HTML, CSS, JavaScript.
-Pomodoro Timer in desktop and mobile versions. HTML, CSS, JavaScript.
 
 Pomodoro timer counts down 25 minutes for work and 5 minutes for break.  
 After the first 30-minute round of Work + Break, the message "The first round of the Pomodoro technique is completed" is displayed. After each following round, the message "Another round of the Pomodoro technique is completed" is displayed.  
