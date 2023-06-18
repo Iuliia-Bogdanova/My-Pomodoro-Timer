@@ -108,6 +108,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    body {
+        background-image: url(../assets/img/bg_mob.jpg);
+    }
     .container {
         margin-block: 40px;
     }
