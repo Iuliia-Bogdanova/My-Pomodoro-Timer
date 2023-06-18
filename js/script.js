@@ -44,9 +44,9 @@ const countDown = (time) => {
             }else{
                 roundCount++;
                 if(roundCount === 1) {
-                    updateTitle("Completed First Round of Pomodoro Technique");
+                    updateTitle("The First Round of Pomodoro Technique Is Completed");
                 }else{
-                    updateTitle("Completed One More Round of Pomodoro Technique");
+                    updateTitle("Another Round of Pomodoro Technique Is Completed");
                 }
                 setTimeout(() => updateTitle("Start Timer Again"), 10000);
                 totalCount++;
