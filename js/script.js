@@ -8,8 +8,8 @@ const resetBtn = document.querySelector(".resetBtn");
 const pomoCountsDisplay = document.querySelector(".pomoCountsDisplay");
 
 // Making Variables
-const WORK_TIME = 00 * 20;
-const BREAK_TIME = 00 * 10;
+const WORK_TIME = 25 * 60;
+const BREAK_TIME = 05 * 60;
 let timerID = null;
 let oneRoundCompleted = false;
 let roundCount = 0;
