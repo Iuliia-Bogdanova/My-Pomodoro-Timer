@@ -1,5 +1,3 @@
-Test task for RDCLR.SCHOOL
-
 Pomodoro Timer in desktop and mobile versions. HTML, CSS, JavaScript.  
 https://iuliia-bogdanova.github.io/My-Pomodoro-Timer/
 
