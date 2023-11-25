@@ -9,7 +9,7 @@ const pomoCountsDisplay = document.querySelector(".pomoCountsDisplay");
 
 // Making Variables
 const WORK_TIME = 25 * 60;
-const BREAK_TIME = 5 * 60;
+const BREAK_TIME = 05 * 60;
 let timerID = null;
 let oneRoundCompleted = false;
 let roundCount = 0;
